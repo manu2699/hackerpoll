@@ -230,6 +230,7 @@ table {
       font-size: 1.1em;
       width: 20px;
       font-weight: 600;
+      text-align: center;
       margin: 2px 0px;
       border-radius: 10px; }
     table tr th {
