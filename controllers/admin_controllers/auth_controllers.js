@@ -5,6 +5,11 @@ const jwt = require("jsonwebtoken");
 const signUp = async (req, res) => {
   //required -> email, name, password
   try {
+    if (req.body.secretPin !== process.env.ADMIN_SECRET) {
+      return res.status(400).json({
+        message: "Admin Secret Doesn't match",
+      });
+    }
     let existingAccount = await AdminModel.findOne({ email: req.body.email });
     if (existingAccount) {
       return res.status(400).json({

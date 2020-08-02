@@ -30,7 +30,10 @@ class AddCandidate extends Component {
       url: `/api/admin/candidate/`,
       method: "post",
       body: { ...this.state },
-      onSuccess: () => this.props.history.goBack(),
+      onSuccess: () => {
+        alert("candidate added")
+        this.props.history.goBack()
+      },
       onError: (err) => {
         this.setState({ isLoading: false })
         alert(err)

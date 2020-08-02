@@ -58,6 +58,7 @@ class CandidatePage extends Component {
       method: "put",
       onSuccess: () => {
         // localStorage.setItem("voted", "true");
+        alert("Thanks for voting..")
         this.props.history.goBack()
       },
       onError: (err) => {

@@ -30,7 +30,10 @@ class EditCandidate extends Component {
       url: `/api/admin/candidate/${this.props.match.params.id}`,
       method: "put",
       body: { ...this.state },
-      onSuccess: () => this.props.history.goBack(),
+      onSuccess: () => {
+        alert("candidate updated")
+        this.props.history.goBack()
+      },
       onError: (err) => {
         this.setState({ isLoading: false })
         alert(err)
@@ -42,7 +45,10 @@ class EditCandidate extends Component {
     await doRequest({
       url: `/api/admin/candidate/${this.props.match.params.id}`,
       method: "delete",
-      onSuccess: () => this.props.history.goBack(),
+      onSuccess: () => {
+        alert("candidate removed")
+        this.props.history.goBack()
+      },
       onError: (err) => {
         this.setState({ isLoading: false })
         alert(err)

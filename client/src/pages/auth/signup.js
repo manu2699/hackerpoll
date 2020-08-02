@@ -90,6 +90,11 @@ class LoginPage extends Component {
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
               </select>
+
+              {this.state.type === 'admin' &&
+                <input type="password" placeholder="Secret Pin" onChange={e =>
+                  this.setState({ secretPin: e.target.value })} required />
+              }
               <br />
               <center>
                 <input type="submit" value="Sign Up" />
