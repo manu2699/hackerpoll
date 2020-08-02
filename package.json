@@ -10,7 +10,7 @@
 		"dev-client": "cd client && npm start",
 		"dev-sass": "cd client && node-sass src/styles/sass/main.scss src/styles/css/main.css -w",
 		"dev-server": "nodemon",
-		"postinstall": "cd install && npm install"
+		"postinstall": "cd client && npm install"
 	},
 	"author": "",
 	"license": "ISC",
