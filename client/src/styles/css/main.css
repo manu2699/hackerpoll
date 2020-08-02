@@ -159,14 +159,10 @@ form {
   padding: 10px;
   width: 100vw;
   position: relative; }
-  .topBar .icon {
+  .topBar .icon,
+  .topBar .menuIcon {
     cursor: pointer;
     font-size: 1.5em; }
-  .topBar .logo {
-    width: 60px; }
-  .topBar .menuIcon {
-    font-size: 1.5em;
-    cursor: pointer; }
   .topBar .logOptions {
     display: none;
     flex-direction: column;
@@ -180,6 +176,17 @@ form {
       padding: 0.6em;
       height: max-content;
       cursor: pointer; }
+
+@media screen and (max-width: 500px) {
+  .topBar h1 {
+    font-size: 1.4em; }
+  .topBar .logOptions {
+    font-size: 1em;
+    font-weight: bold; }
+    .topBar .logOptions div {
+      padding: 0.2em;
+      height: max-content;
+      cursor: pointer; } }
 
 .Card {
   display: flex;

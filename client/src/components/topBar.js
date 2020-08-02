@@ -5,6 +5,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 export default ({ history, isHome = false, type = "" }) => {
 
   useEffect(() => {
+    if (type === "user")
+      type = ""
     var acc = document.getElementsByClassName("menuIcon");
     acc[0].addEventListener("click", function () {
       var panel = this.nextElementSibling;
@@ -29,7 +31,7 @@ export default ({ history, isHome = false, type = "" }) => {
         )}
       {isHome ? (<></>) : (
         <div onClick={async () => history.push(`/${type}`)}>
-          <h1>{"<HACKER POLL />"}</h1>
+          <h1 style={{ cursor: "pointer" }}>{"<HACKER POLL />"}</h1>
         </div>
       )}
       <div>

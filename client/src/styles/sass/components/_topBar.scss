@@ -6,16 +6,10 @@
 	padding: 10px;
 	width: 100vw;
 	position: relative;
-	.icon {
-		cursor: pointer;
-		font-size: 1.5em;
-	}
-	.logo {
-		width: 60px;
-	}
+	.icon,
 	.menuIcon {
-		font-size: 1.5em;
 		cursor: pointer;
+		font-size: 1.5em;
 	}
 	.logOptions {
 		display: none;
@@ -31,6 +25,23 @@
 			padding: 0.6em;
 			height: max-content;
 			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.topBar {
+		h1 {
+			font-size: 1.4em;
+		}
+		.logOptions {
+			font-size: 1em;
+			font-weight: bold;
+			div {
+				padding: 0.2em;
+				height: max-content;
+				cursor: pointer;
+			}
 		}
 	}
 }
