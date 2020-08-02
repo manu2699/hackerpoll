@@ -1,0 +1,16 @@
+.xButton {
+	// @extend %button;
+	font-weight: bolder;
+	font-size: 1.2em;
+	width: 20px;
+	height: 20px;
+	padding: 5px;
+	margin: 5px;
+	@extend %button-circle;
+}
+
+.file {
+	@extend %button;
+	border-radius: 10px;
+	border: none;
+}

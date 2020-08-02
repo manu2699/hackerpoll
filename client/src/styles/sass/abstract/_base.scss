@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="password"] {
+	background: transparent;
+	color: inherit;
+	font-size: 1.1em;
+	margin: 10px;
+	padding: 5px;
+	height: 2em;
+	font-weight: 600;
+	font-family: inherit;
+	outline: none;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: #1194ff;
+	width: 100%;
+	text-align: center;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+	border-color: #fc6e2d;
+}
+
+input[type="submit"],
+.primaryButton {
+	@extend %button;
+}
+
+.secButton {
+	@extend %button;
+	background-color: #fc6e2d;
+	border-color: #1584eb;
+}
+
+select {
+	background: transparent;
+	color: inherit;
+	font-size: 1.1em;
+	margin: 0px 0px;
+	padding: 8px 20px;
+	font-weight: 600;
+	font-family: inherit;
+	outline: none;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1194ff;
+	border-radius: 5px;
+	outline: none;
+	width: max-content;
+}
+
+.inputRow {
+	width: inherit;
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 10px 0px;
+}
+
+.inputCol {
+	margin: 0rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h4 {
+	margin: 10px 0px;
+}
+
+a {
+	color: #fc6e2d;
+}
+
+form {
+	width: 70%;
+}

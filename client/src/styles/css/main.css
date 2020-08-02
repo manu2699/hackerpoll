@@ -1,0 +1,231 @@
+input[type="submit"],
+.primaryButton, .secButton, .file {
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+  width: max-content;
+  text-align: center;
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #1584eb;
+  border-style: none solid none solid;
+  border-left-width: 8px;
+  border-right-width: 0px;
+  border-color: #fc6e2d;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0px 0px 7px 3px #00000033;
+  transition: 250ms ease-out; }
+  input:hover[type="submit"],
+  .primaryButton:hover, .secButton:hover, .file:hover {
+    background-color: #fc6e2d;
+    border-color: #1584eb;
+    border-left-width: 0px;
+    border-right-width: 8px; }
+
+.xButton {
+  border-radius: 50%;
+  border-style: none;
+  background-color: #fc6e2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 250ms ease-out; }
+  .xButton:hover {
+    background-color: #1584eb; }
+
+.candidates {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.Card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.centerPage, .container {
+  width: 99vw;
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+
+input[type="number"],
+input[type="text"],
+input[type="password"] {
+  background: transparent;
+  color: inherit;
+  font-size: 1.1em;
+  margin: 10px;
+  padding: 5px;
+  height: 2em;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #1194ff;
+  width: 100%;
+  text-align: center; }
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #fc6e2d; }
+
+.secButton {
+  background-color: #fc6e2d;
+  border-color: #1584eb; }
+
+select {
+  background: transparent;
+  color: inherit;
+  font-size: 1.1em;
+  margin: 0px 0px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #1194ff;
+  border-radius: 5px;
+  outline: none;
+  width: max-content; }
+
+.inputRow {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0px; }
+
+.inputCol {
+  margin: 0rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+h4 {
+  margin: 10px 0px; }
+
+a {
+  color: #fc6e2d; }
+
+form {
+  width: 70%; }
+
+/* width */
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 8px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 7px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1194ff;
+  background-image: linear-gradient(to top, #1194ff, #fc6e2d);
+  border-radius: 10px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, #1194ff, #fc6e2d); }
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px;
+  height: max-content;
+  width: 250px;
+  font-weight: 600;
+  font-size: 20px;
+  word-wrap: break-word;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none none none solid;
+  border-color: #fc6e2d;
+  border-width: 8px;
+  position: relative;
+  transition: 250ms ease-out; }
+  .Card:hover {
+    cursor: pointer;
+    background-color: #fc6e2d;
+    color: white;
+    border-color: inherit; }
+
+table {
+  width: 100%;
+  padding: 0% 1%;
+  border-collapse: 0; }
+  table tr {
+    width: 100%;
+    height: max-content; }
+    table tr #small {
+      width: 10%;
+      text-align: center;
+      padding: 5px; }
+    table tr td {
+      text-align: left;
+      padding: 15px;
+      font-size: 1.1em;
+      width: 20px;
+      font-weight: 600;
+      margin: 2px 0px;
+      border-radius: 10px; }
+    table tr th {
+      text-align: center;
+      padding: 10px;
+      margin: 2px 0px;
+      color: white;
+      background-color: #0373cf; }
+    table tr:nth-child(odd) {
+      background-color: #7ebdf0; }
+    table tr:nth-child(even) {
+      background-color: #fcb497; }
+    table tr:hover {
+      cursor: pointer; }
+
+.xButton {
+  font-weight: bolder;
+  font-size: 1.2em;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  margin: 5px; }
+
+.file {
+  border-radius: 10px;
+  border: none; }
+
+.centerPage {
+  justify-content: center; }
+
+.candidates {
+  padding: 1% 10%;
+  flex-wrap: wrap; }
+  .candidates p {
+    display: inline;
+    margin: 10px; }
+  .candidates span {
+    font-weight: bold; }

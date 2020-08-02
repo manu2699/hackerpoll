@@ -1,0 +1,26 @@
+{
+	"name": "hackerpoll",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+		"dev-client": "cd client && npm start",
+		"dev-sass": "cd client && node-sass src/styles/sass/main.scss src/styles/css/main.css -w",
+		"dev-server": "nodemon",
+		"postinstall": "cd install && npm install"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"express-validator": "^6.6.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.9.27",
+		"socket.io": "^2.3.0"
+	}
+}

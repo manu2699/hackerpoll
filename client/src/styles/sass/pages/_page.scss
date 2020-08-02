@@ -1,0 +1,21 @@
+.centerPage {
+	@extend %body-page;
+	justify-content: center;
+}
+
+.container {
+	@extend %body-page;
+}
+
+.candidates {
+	@extend %flex-row-center;
+	padding: 1% 10%;
+	flex-wrap: wrap;
+	p {
+		display: inline;
+		margin: 10px;
+	}
+	span {
+		font-weight: bold;
+	}
+}
