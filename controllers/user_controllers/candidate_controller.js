@@ -23,8 +23,15 @@ const fetchCandidateById = async (req, res) => {
 
 const voteCandidate = async (req, res) => {
   try {
-    let user = await UserModel.findById(req.userData._id).select("votes");
-    if (user.votes.includes(req.params.id)) {
+    // let user = await UserModel.findById(req.userData._id).select("votes");
+    // if (user.votes.includes(req.params.id)) {
+    //   return res.status(400).json({
+    //     message: "You have already Registered Your vote to this candidate",
+    //   });
+    // }
+
+    let user = await UserModel.findById(req.userData._id).select("isVoted");
+    if (user.isVoted) {
       return res.status(400).json({
         message: "You have already Registered Your vote to this candidate",
       });
@@ -37,7 +44,10 @@ const voteCandidate = async (req, res) => {
 
     await UserModel.updateOne(
       { _id: req.userData._id },
-      { $push: { votes: req.params.id } }
+      {
+        $push: { votes: req.params.id },
+        $set: { isVoted: true }
+      }
     )
 
     const io = req.app.get("io");

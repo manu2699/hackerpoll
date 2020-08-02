@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import doRequest from "../../utils/requestHooks";
 import Loader from "react-loader-spinner"
+import TopBar from "../../components/topBar";
+import { FaUserCheck } from "react-icons/fa";
 
 class CandidatePage extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class CandidatePage extends Component {
       method: "get",
       onSuccess: (data) => {
         console.log(data)
-        this.setState({ ...data, isLoading: false })
+        this.setState({ ...data })
       },
       onError: (err) => {
         this.setState({ isLoading: false })
@@ -27,19 +29,35 @@ class CandidatePage extends Component {
     });
   }
 
+  getUser = async () => {
+    await doRequest({
+      url: `/api/user/auth/`,
+      method: "get",
+      onSuccess: (data) => {
+        console.log(data)
+        this.setState({ ...data, isLoading: false })
+      },
+      onError: (err) => {
+        this.setState({ isLoading: false })
+        alert(err)
+      },
+    });
+  }
+
   componentDidMount = async () => {
     await this.getCandidate()
-    let voteCheck = localStorage.getItem("voted");
-    if (voteCheck !== null)
-      this.setState({ isVoted: true })
+    await this.getUser()
+    // let voteCheck = localStorage.getItem("voted");
+    // if (voteCheck !== null)
+    //   this.setState({ isVoted: true })
   }
 
   voteCandidate = async () => {
     await doRequest({
       url: `/api/user/candidate/vote/${this.props.match.params.id}`,
       method: "put",
-      onSuccess: (data) => {
-        localStorage.setItem("voted", "true");
+      onSuccess: () => {
+        // localStorage.setItem("voted", "true");
         this.props.history.goBack()
       },
       onError: (err) => {
@@ -56,12 +74,12 @@ class CandidatePage extends Component {
           <Loader className="centerPage" type="Oval" color="#1194ff" height={150} width={150} />
         ) : (
             <>
-              <h1>{"<HACKER POLL />"}</h1>
+              <TopBar {...this.props} />
               <div className="candidates" style={{ flexDirection: "column" }}>
                 <div className="Card" style={{ width: "300px" }}>
-                  <p>Name: <span>{this.state.name} </span></p>
+                  <p>Name : <span>{this.state.name} </span></p>
                   <p>Challenges Solved : <span>{this.state.challengeSolved}</span></p>
-                  <p>Expertise Level: <span>{this.state.expertiseLevel}</span></p>
+                  <p>Expertise Level : <span>{this.state.expertiseLevel}</span></p>
                   <p>No of Votes : <span>{this.state.noOfVotes}</span></p>
                   <p>Data Structures : <span>{this.state.expertIn.dataStructures}</span></p>
                   <p>Algorithm : <span>{this.state.expertIn.algorithms}</span> </p>
@@ -69,11 +87,13 @@ class CandidatePage extends Component {
                   <p>Java : <span>{this.state.expertIn.java}</span></p>
                   <p>Python : <span>{this.state.expertIn.python}</span></p>
                   <p>JavaScript : <span>{this.state.expertIn.javascript}</span></p>
+                  <FaUserCheck className="bgIco" />
                 </div>
-                {!this.state.isVoted &&
+                {!this.state.isVoted ?
                   <button className="primaryButton" onClick={() => this.voteCandidate()}>
                     Vote
-                  </button>
+                  </button> :
+                  <h4>You have already registered your vote..</h4>
                 }
               </div>
             </>

@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
   votes: {
     type: [{ type: Schema.Types.ObjectId, ref: "candidate" }]
   },
+  isVoted: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model("user", userSchema);

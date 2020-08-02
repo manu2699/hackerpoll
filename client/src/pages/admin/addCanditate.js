@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import doRequest from "../../utils/requestHooks";
 import Loader from "react-loader-spinner"
+import TopBar from "../../components/topBar";
 
 class AddCandidate extends Component {
   constructor(props) {
@@ -56,8 +57,9 @@ class AddCandidate extends Component {
   render() {
     return (
       <div className="container">
+        <TopBar {...this.props} type="admin" />
         {this.state.isLoading ? (
-          <Loader type="Oval" color="#1194ff" height={150} width={150} />
+          <Loader className="centerPage" type="Oval" color="#1194ff" height={150} width={150} />
         ) : (
             <form onSubmit={this.addCandidate}>
               <h2>Create new Candidate</h2>

@@ -151,6 +151,36 @@ form {
 ::-webkit-scrollbar-thumb:hover {
   background-image: linear-gradient(to bottom, #1194ff, #fc6e2d); }
 
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80px;
+  padding: 10px;
+  width: 100vw;
+  position: relative; }
+  .topBar .icon {
+    cursor: pointer;
+    font-size: 1.5em; }
+  .topBar .logo {
+    width: 60px; }
+  .topBar .menuIcon {
+    font-size: 1.5em;
+    cursor: pointer; }
+  .topBar .logOptions {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #1194ff;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold; }
+    .topBar .logOptions div {
+      padding: 0.6em;
+      height: max-content;
+      cursor: pointer; }
+
 .Card {
   display: flex;
   flex-direction: column;
@@ -167,17 +197,26 @@ form {
   border-color: #fc6e2d;
   border-width: 8px;
   position: relative;
-  transition: 250ms ease-out; }
+  transition: 250ms ease-out;
+  overflow: hidden; }
   .Card:hover {
     cursor: pointer;
     background-color: #fc6e2d;
     color: white;
     border-color: inherit; }
+  .Card .bgIco {
+    position: absolute;
+    color: #9ccff85d;
+    font-size: 8em;
+    bottom: 0;
+    right: -20px;
+    opacity: 0.7; }
 
 table {
   width: 100%;
   padding: 0% 1%;
-  border-collapse: 0; }
+  border-collapse: 0;
+  background-color: none; }
   table tr {
     width: 100%;
     height: max-content; }
@@ -198,7 +237,8 @@ table {
       padding: 10px;
       margin: 2px 0px;
       color: white;
-      background-color: #0373cf; }
+      background-color: #0373cf;
+      border-radius: 10px; }
     table tr:nth-child(odd) {
       background-color: #7ebdf0; }
     table tr:nth-child(even) {

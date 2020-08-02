@@ -8,7 +8,9 @@ class LoginPage extends Component {
     this.state = {
       email: "",
       password: "",
-      name: ""
+      name: "",
+      type: "user",
+      isLoading: true
     }
   }
 
@@ -54,6 +56,14 @@ class LoginPage extends Component {
     });
   };
 
+  componentDidMount = () => {
+    let token = localStorage.getItem("token")
+    if (token === null)
+      this.setState({ isLoading: false })
+    else
+      this.props.history.push("/signin")
+  }
+
   render() {
     return (
       <div className="centerPage">
@@ -76,7 +86,7 @@ class LoginPage extends Component {
                 this.setState({ confirmPass: e.target.value })} required />
 
               <h4>You are an ?</h4>
-              <select onChange={e => this.setState({ type: e.target.value })}>
+              <select value={this.state.type} onChange={e => this.setState({ type: e.target.value })}>
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
               </select>

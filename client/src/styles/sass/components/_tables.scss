@@ -2,6 +2,7 @@ table {
 	width: 100%;
 	padding: 0% 1%;
 	border-collapse: 0;
+	background-color: none;
 	tr {
 		// outline: thin solid;
 		width: 100%;
@@ -26,7 +27,7 @@ table {
 			margin: 2px 0px;
 			color: white;
 			background-color: #0373cf;
-			// border-radius: 20px;
+			border-radius: 10px;
 		}
 
 		&:nth-child(odd) {

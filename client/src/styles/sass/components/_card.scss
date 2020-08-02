@@ -17,18 +17,20 @@
 	position: relative;
 	@extend %add-shadow;
 	transition: 250ms ease-out;
+	overflow: hidden;
 	&:hover {
 		cursor: pointer;
 		background-color: #fc6e2d;
 		color: white;
 		border-color: inherit;
 	}
-}
 
-// @media screen and (max-width: 500px) {
-// 	.Card {
-// 		width: 100px;
-// 		height: 100px;
-// 		margin: 15px 10px;
-// 	}
-// }
+	.bgIco {
+		position: absolute;
+		color: #9ccff85d;
+		font-size: 8em;
+		bottom: 0;
+		right: -20px;
+		opacity: 0.7;
+	}
+}

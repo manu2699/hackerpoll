@@ -17,9 +17,7 @@ const EditCandidate = lazy(() => import("./pages/admin/editCandidate"));
 function App() {
   return (
     <Suspense fallback={
-      <center className="loader">
-        <Loader type="Oval" color="#1194ff" height={150} width={150} />
-      </center>
+      <Loader className="centerPage" type="Oval" color="#1194ff" height={150} width={150} />
     }>
       <BrowserRouter>
         <Route exact path="/signin" component={SignIn} />

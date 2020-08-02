@@ -51,6 +51,16 @@ const signIn = async (req, res) => {
   }
 }
 
+const verify = async (req, res) => {
+  try {
+    let user = await UserModel.findById(req.userData._id);
+    res.status(200).send(user);
+  } catch (e) {
+    console.log(e);
+    res.status(400).json({ message: "Some error occured :(" });
+  }
+}
+
 module.exports = {
-  signIn, signUp,
+  signIn, signUp, verify
 };
