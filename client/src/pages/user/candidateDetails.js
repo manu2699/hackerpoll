@@ -35,7 +35,7 @@ class CandidatePage extends Component {
       method: "get",
       onSuccess: (data) => {
         console.log(data)
-        this.setState({ ...data, isLoading: false })
+        this.setState({ isVoted: data.isVoted, isLoading: false })
       },
       onError: (err) => {
         this.setState({ isLoading: false })

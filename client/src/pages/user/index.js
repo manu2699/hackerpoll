@@ -19,7 +19,7 @@ class HomePage extends Component {
     await doRequest({
       url: `/api/user/candidate/`,
       method: "get",
-      onSuccess: (data) => { this.setState({ data, copy: data, isLoading: false }) },
+      onSuccess: (data) => { this.setState({ data, copy: data }) },
       onError: (err) => {
         this.setState({ isLoading: false })
         alert(err)
@@ -28,9 +28,23 @@ class HomePage extends Component {
     });
   }
 
+  getUser = async () => {
+    await doRequest({
+      url: `/api/user/auth/`,
+      method: "get",
+      onSuccess: (data) => {
+        this.setState({ ...data, isLoading: false })
+      },
+      onError: (err) => {
+        this.setState({ isLoading: false })
+        alert(err)
+      },
+    });
+  }
+
   componentDidMount = async () => {
     await this.getCandidates()
-
+    await this.getUser()
     let socket = io.connect(url);
     socket.on(`Vote`, async () => {
       await this.getCandidates()
@@ -55,8 +69,8 @@ class HomePage extends Component {
         ) : (
             <>
               <TopBar {...this.props} isHome={true} />
-              {/* <h1>{"<HACKER POLL />"}</h1> */}
               <form>
+                <h3>Welcome {this.state.name}</h3>
                 <input type="text" placeholder="Search Your Candidate" value={this.state.search} onChange={e => {
                   this.setState({ search: e.target.value })
                 }} />
